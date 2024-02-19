@@ -1,7 +1,10 @@
-const App = () =>{
-  return (
-    <div>Atom</div>
-  )
-}
+import { Button } from 'components/Button';
 
-export default App
+export const App = () => {
+  return (
+    <>
+      <div>Atom</div>
+      <Button>Atom Btn</Button>
+    </>
+  );
+};
