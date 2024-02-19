@@ -36,12 +36,12 @@ export default defineConfig({
               // lib/nested/foo.ts becomes nested/foo
               relative(
                 'lib',
-                file.slice(0, file.length - extname(file).length)
+                file.slice(0, file.length - extname(file).length),
               ),
               // The absolute path to the entry file
               // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
               fileURLToPath(new URL(file, import.meta.url)),
-            ])
+            ]),
         ),
         // Generated styles
         ...Object.fromEntries(
@@ -52,7 +52,7 @@ export default defineConfig({
             // The absolute path to the entry file
             // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
             fileURLToPath(new URL(file, import.meta.url)),
-          ])
+          ]),
         ),
       },
       output: {
