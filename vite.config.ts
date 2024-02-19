@@ -12,8 +12,7 @@ export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
-    dts({ include: 'lib' }),
-    // dts({ include: 'lib', exclude: 'lib/**/*.stories.{ts,tsx}' }),
+    dts({ include: 'lib', exclude: 'lib/**/*.stories.{ts,tsx}' }),
   ],
   css: {
     postcss: {
@@ -31,8 +30,7 @@ export default defineConfig({
       input: {
         ...Object.fromEntries(
           glob
-            .sync('lib/**/*.{ts,tsx}')
-            // .sync('lib/**/*.{ts,tsx}', { ignore: 'lib/**/*.stories.{ts,tsx}' })
+            .sync('lib/**/*.{ts,tsx}', { ignore: 'lib/**/*.stories.{ts,tsx}' })
             .map((file) => [
               // The name of the entry point
               // lib/nested/foo.ts becomes nested/foo
